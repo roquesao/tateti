@@ -24,3 +24,9 @@ Scenario: Jugador X hace TATETI
 	And Jugador "0" hace click en posicion "1:1"
 	And Jugador "X" hace click en posicion "0:2"
 	Then Veo "TATETI: X"
+
+Scenario: Jugador X hace click y reinicia el juego
+	Given Empieza el juego 
+	When Jugador "X" hace click en posicion "0:0"
+	And Jugador "X" hace click en posicion "REINICIAR"
+	Then Veo "Turno para : X"

@@ -28,6 +28,7 @@ def devolvermatriz
 end
 
 def gano
+	flag = 0
 	if ((@ttt[0][0] == @ttt[0][1]) and (@ttt[0][0] == @ttt[0][2]) and (@ttt[0][0] != "LIBRE")) then
 		flag = 1 	
 	end
@@ -40,7 +41,11 @@ def gano
 		flag = 1 	
 	end
 	
-	if ((@ttt[1][0] == @ttt[1][1]) and (@ttt[1][0] == @ttt[2][2]) and (@ttt[1][0] != "LIBRE")) then
+	if ((@ttt[2][0] == @ttt[1][1]) and (@ttt[2][0] == @ttt[0][2]) and (@ttt[2][0] != "LIBRE")) then
+		flag = 1 	
+	end
+
+	if ((@ttt[1][0] == @ttt[1][1]) and (@ttt[1][0] == @ttt[1][2]) and (@ttt[1][0] != "LIBRE")) then
 		flag = 1 	
 	end
 	
@@ -53,6 +58,10 @@ def gano
 	end
 
 	if ((@ttt[0][1] == @ttt[1][1]) and (@ttt[0][1] == @ttt[2][1]) and (@ttt[0][1] != "LIBRE")) then
+		flag = 1 	
+	end
+	
+	if ((@ttt[0][0] == @ttt[1][1]) and (@ttt[0][0] == @ttt[2][2]) and (@ttt[0][0] != "LIBRE")) then
 		flag = 1 	
 	end
 
