@@ -27,5 +27,50 @@ def devolvermatriz
 	return @ttt
 end
 
+def gano
+	if ((@ttt[0][0] == @ttt[0][1]) and (@ttt[0][0] == @ttt[0][2]) and (@ttt[0][0] != "LIBRE")) then
+		flag = 1 	
+	end
+	
+	if ((@ttt[1][0] == @ttt[1][1]) and (@ttt[1][0] == @ttt[1][2]) and (@ttt[1][0] != "LIBRE")) then
+		flag = 1 	
+	end
+		
+	if ((@ttt[2][0] == @ttt[2][1]) and (@ttt[2][0] == @ttt[2][2]) and (@ttt[2][0] != "LIBRE")) then
+		flag = 1 	
+	end
+	
+	if ((@ttt[1][0] == @ttt[1][1]) and (@ttt[1][0] == @ttt[2][2]) and (@ttt[1][0] != "LIBRE")) then
+		flag = 1 	
+	end
+	
+	if ((@ttt[0][2] == @ttt[1][1]) and (@ttt[0][2] == @ttt[2][1]) and (@ttt[0][2] != "LIBRE")) then
+		flag = 1 	
+	end
+	
+	if ((@ttt[0][0] == @ttt[1][0]) and (@ttt[0][0] == @ttt[2][0]) and (@ttt[0][0] != "LIBRE")) then
+		flag = 1 	
+	end
+
+	if ((@ttt[0][1] == @ttt[1][1]) and (@ttt[0][1] == @ttt[2][1]) and (@ttt[0][1] != "LIBRE")) then
+		flag = 1 	
+	end
+
+	if ((@ttt[0][2] == @ttt[1][2]) and (@ttt[0][2] == @ttt[2][2]) and (@ttt[0][2] != "LIBRE")) then
+		flag = 1 	
+	end
+
+	if flag  == 1 then 
+		if @turno == "X" then
+			@turno = "0"
+		else
+			@turno = "X"
+		end	
+	 	return "TATETI: #{@turno}"
+	else
+		return " "	
+	end
+end
+
 
 end

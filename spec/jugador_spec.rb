@@ -29,5 +29,17 @@ it "El jugador 2 presiona la posicion 0,1 el vector asigna su turno en la misma 
 end
 
 
+it "El jugador 1 presiona las posiciones 0,0 0,1 y 0,2, el jugador 2 presiona 1,0 y 1,1 Hace TATETI" do
+	jugador1 = Jugador.new
+	jugador1.presionarboton(0, 0)
+	jugador1.presionarboton(1, 0)
+	jugador1.presionarboton(0, 1)
+	jugador1.presionarboton(1, 1)
+	jugador1.presionarboton(0, 2)
+	@matriz = jugador1.devolvermatriz
+	jugador1.gano.should == "TATETI: X"
+end
+
+
 
 end
