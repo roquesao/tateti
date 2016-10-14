@@ -15,6 +15,7 @@ get '/pos/:x/:y'  do
 	y = params[:y].to_i
 	@turno = @@jugador.presionarboton x,y
 	@ttt = @@jugador.devolvermatriz
+	@mensaje = @@jugador.gano
     erb :pantalla_tateti 
 end
 

@@ -19,3 +19,9 @@ Then(/^Veo "(.*?)" en la posicion (\d+),(\d+)$/) do |signo, x, y|
   end
 end
 
+When(/^Jugador "(.*?)" hace click en posicion "(.*?)"$/) do |jugador,posicion|
+   click_link(posicion)
+end
+
+
+
