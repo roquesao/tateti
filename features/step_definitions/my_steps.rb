@@ -7,7 +7,15 @@ Then(/^Veo "(.*?)"$/) do |arg1|
 end
 
 When(/^Jugador "(.*?)" hace click$/) do |arg1|
-  click_link("10")
+  click_link("0:0")
 end
 
+Then(/^Veo "(.*?)" en la posicion (\d+),(\d+)$/) do |signo, x, y|
+
+  celda = "#{x}:#{y}"
+
+  last_response.should have_xpath( "//td[@id=\"#{celda}\"]") do |td|
+    td.should contain( signo )
+  end
+end
 

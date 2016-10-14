@@ -2,6 +2,7 @@ class Jugador
 def initialize
 	@turno = "X"
 	@ttt = [[0,0,0],[0,0,0],[0,0,0]]
+	3.times {|x| 3.times {|y| @ttt[x][y]="LIBRE"}}
 end
 
 def asignarposicion posicionx, posiciony

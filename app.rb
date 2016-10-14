@@ -1,14 +1,23 @@
 require 'sinatra'
 require_relative "./lib/jugador.rb"
 
-@@jugador=Jugador.new
+
 
 get '/' do
+	@@jugador=Jugador.new
 	@turno = @@jugador.devolverTurno
+	@ttt = @@jugador.devolvermatriz
     erb :pantalla_tateti 
 end
 
-get '/presionarBoton' do
-	@turno = @@jugador.presionarboton 1,1
+get '/pos/:x/:y'  do
+	x = params[:x].to_i
+	y = params[:y].to_i
+	@turno = @@jugador.presionarboton x,y
+	@ttt = @@jugador.devolvermatriz
     erb :pantalla_tateti 
 end
+
+
+
+
