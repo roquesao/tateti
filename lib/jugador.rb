@@ -22,5 +22,9 @@ def devolverTurno
 	return @turno
 end
 
+def devolvermatriz
+	return @ttt
+end
+
 
 end
